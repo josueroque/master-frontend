@@ -1,0 +1,73 @@
+div.theme-1 > button.base {
+  background-color: red; }
+
+div.theme-1 > button.important {
+  background-color: #990000; }
+
+div.theme-1 > button.warning {
+  background-color: #ff6666; }
+
+div.theme-1 > p.principal-font {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; }
+
+div.theme-1 > p.secondary-font {
+  font-family: Verdana, Geneva, Tahoma, sans-serif; }
+
+div.theme-1 > div.box-with-shadow {
+  box-sizing: content-box;
+  height: 60px;
+  border-style: solid;
+  box-shadow: -10px 10px 0px 0px #ff6666;
+  display: flex; }
+
+div.theme-1 > div.box-with-shadow.span {
+  align-self: center; }
+
+div.theme-2 > button.base {
+  background-color: blue; }
+
+div.theme-2 > button.important {
+  background-color: #000099; }
+
+div.theme-2 > button.warning {
+  background-color: #6666ff; }
+
+div.theme-2 > p.principal-font {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif; }
+
+div.theme-2 > p.secondary-font {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; }
+
+div.theme-2 > p.box-with-shadow {
+  font-family: Verdana, Geneva, Tahoma, sans-serif; }
+
+div.theme-2 > div.box-with-shadow {
+  box-sizing: content-box;
+  height: 60px;
+  border-style: solid;
+  box-shadow: 10px 10px 0px 0px #6666ff;
+  display: flex; }
+
+.main {
+  display: flex;
+  justify-content: center;
+  gap: 100px; }
+
+button {
+  min-width: 15vw;
+  display: block;
+  height: 50px;
+  margin-top: 10px;
+  color: white;
+  font-size: large;
+  border-radius: 10px; }
+  button:hover {
+    cursor: pointer; }
+
+h3 {
+  padding: 10px;
+  display: flex;
+  justify-content: center; }
+
+.box-with-shadow {
+  margin-top: 40%; }

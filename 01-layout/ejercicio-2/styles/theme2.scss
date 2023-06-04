@@ -1,0 +1,32 @@
+$main-color: blue;
+div.theme-2 > button.base {
+  background-color: $main-color;
+}
+
+div.theme-2 > button.important {
+  background-color: darken($main-color, 20);
+}
+
+div.theme-2 > button.warning {
+  background-color: lighten($main-color, 20);
+}
+
+div.theme-2 > p.principal-font {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+div.theme-2 > p.secondary-font {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+div.theme-2 > p.box-with-shadow {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+div.theme-2 > div.box-with-shadow {
+  box-sizing: content-box;
+  height: 60px;
+  border-style: solid;
+  box-shadow: 10px 10px 0px 0px lighten($main-color, 20);
+  display: flex;
+}

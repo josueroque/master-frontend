@@ -1,0 +1,32 @@
+$main-color: red;
+div.theme-1 > button.base {
+  background-color: $main-color;
+}
+
+div.theme-1 > button.important {
+  background-color: darken($main-color, 20);
+}
+
+div.theme-1 > button.warning {
+  background-color: lighten($main-color, 20);
+}
+
+div.theme-1 > p.principal-font {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+div.theme-1 > p.secondary-font {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+div.theme-1 > div.box-with-shadow {
+  box-sizing: content-box;
+  height: 60px;
+  border-style: solid;
+  box-shadow: -10px 10px 0px 0px lighten($main-color, 20);
+  display: flex;
+}
+
+div.theme-1 > div.box-with-shadow.span {
+  align-self: center;
+}
