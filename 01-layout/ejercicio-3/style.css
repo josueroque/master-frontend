@@ -15,7 +15,7 @@
   list-style: none;
   color: white;
   font-size: large;
-  height: 15vh;
+  height: 10vh;
   width: 100%;
   font-size: 1.5rem;
   align-self: center;
@@ -46,10 +46,13 @@ h2 {
   }
 
   h2 {
+    margin-top: 10vh;
+    margin-bottom: 5vh;
     margin-left: 10vw;
   }
   .horizontal-menu > li {
     justify-content: center;
+    height: 12vh;
     padding: 0;
   }
 }
