@@ -1,0 +1,94 @@
+* {
+  padding: 0;
+  margin: 0;
+  background-color: lightgray;
+}
+
+.main-header {
+  text-align: center;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 20vw 20vw 20vw 20vw;
+  justify-content: center;
+  padding: 20px;
+  grid-gap: 40px;
+}
+
+.card {
+  border: solid 1px darkgray;
+  background-color: white;
+  display: grid;
+  grid-template-rows: 0.4fr 0.4fr 0.2fr;
+}
+
+.button-container {
+  background-color: inherit;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.15rem;
+  color: White;
+  background-color: green;
+  margin: 10px;
+  border: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
+  height: 30vh;
+}
+
+h2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: inherit;
+}
+
+.details {
+  background-color: inherit;
+  padding: 10px;
+}
+
+.details > p {
+  background-color: inherit;
+}
+
+p > span {
+  color: green;
+  background-color: inherit;
+}
+
+.published-text {
+  background-color: inherit;
+  margin-top: 10px;
+  text-align: right;
+}
+
+@media (width < 1024px) {
+  .main-container {
+    grid-template-columns: 30vw 30vw 30vw;
+  }
+}
+
+@media (width < 792px) {
+  .main-container {
+    grid-template-columns: 45vw 45vw;
+  }
+}
+
+@media (width < 552px) {
+  .main-container {
+    grid-template-columns: 80vw;
+  }
+}
