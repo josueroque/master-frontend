@@ -1,0 +1,40 @@
+$base-color1: blue;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container-1 {
+  margin: 20px;
+  display: flex;
+  column-gap: 5px;
+}
+
+.box {
+  border: 1px solid black;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  &.base-color {
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: $base-color1;
+    color: white;
+  }
+}
+
+@for $i from 1 through 4 {
+  div[class*="darken-"]:nth-child(3n + #{$i}) {
+    background-color: darken($base-color1, (5 - $i) * 5%);
+    color: darkgray;
+  }
+}
+
+@for $j from 1 through 4 {
+  div[class*="lighten-"]:nth-child(5n + #{$j}) {
+    background-color: lighten($base-color1, (4 + $j) * 3%);
+    color: darkgray;
+  }
+}
