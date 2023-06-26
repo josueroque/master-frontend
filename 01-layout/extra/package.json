@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "watch": "node-sass -w styles/style.scss styles/style.css",
+    "watch": "node-sass -w style.scss style.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
