@@ -1,7 +1,8 @@
 * {
   margin: 5;
   padding: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  background-color: white; }
 
 header .toolbar {
   margin: 10px;
@@ -28,4 +29,33 @@ header .page-title {
 
 .page-container {
   display: grid;
-  grid-template-columns: 0.2fr 0.8fr; }
+  grid-template-columns: 20% 80%; }
+
+nav {
+  background-color: gray; }
+
+.menu-container {
+  position: sticky;
+  top: 0; }
+  .menu-container .menu-title {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    color: white;
+    background-color: gray;
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    display: flex;
+    justify-content: center; }
+  .menu-container ul {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column; }
+  .menu-container ul > li {
+    font-size: 1.1rem;
+    padding-left: 10px;
+    border: solid 0.75px gray;
+    height: 35px;
+    cursor: pointer; }

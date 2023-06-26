@@ -1,0 +1,6 @@
+@mixin header-common {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+}
