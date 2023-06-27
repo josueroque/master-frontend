@@ -2,7 +2,8 @@
   margin: 5;
   padding: 0;
   box-sizing: border-box;
-  background-color: white; }
+  background-color: #f7ddd8;
+  font-family: Verdana, Arial, sans-serif; }
 
 header .toolbar {
   margin: 10px;
@@ -11,14 +12,15 @@ header .toolbar {
   header .toolbar input {
     width: 20vw;
     height: 30px;
-    padding-left: 5px; }
+    padding-left: 5px;
+    background-color: white; }
   header .toolbar div {
     display: flex;
     flex-direction: row;
     align-items: center; }
 
 header .page-title {
-  background-color: blue;
+  background-color: #bc0000;
   font-size: 1.5rem;
   color: white;
   height: 8vh;
@@ -32,7 +34,7 @@ header .page-title {
   grid-template-columns: 20% 80%; }
 
 nav {
-  background-color: gray; }
+  background-color: #680003; }
 
 .menu-container {
   position: sticky;
@@ -41,13 +43,12 @@ nav {
     font-size: 1.1rem;
     text-transform: uppercase;
     color: white;
-    background-color: gray;
+    background-color: #680003;
     height: 35px;
     display: flex;
     flex-direction: row;
     align-items: center;
     padding: 10px;
-    display: flex;
     justify-content: center; }
   .menu-container ul {
     margin-top: 0;
@@ -58,4 +59,41 @@ nav {
     padding-left: 10px;
     border: solid 0.75px gray;
     height: 35px;
-    cursor: pointer; }
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px; }
+
+.list {
+  padding: 25px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  row-gap: 25px;
+  column-gap: 25px; }
+  .list .card {
+    border: solid 1px gray;
+    background-color: white;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center; }
+    .list .card img {
+      width: 50%;
+      height: 50%;
+      border-radius: 50%; }
+    .list .card div {
+      padding: 10px;
+      text-align: center;
+      background-color: white; }
+    .list .card * {
+      margin: 0 auto; }
+
+footer {
+  background-color: #efb9ad;
+  height: 5vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px; }

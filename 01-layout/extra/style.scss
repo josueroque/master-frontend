@@ -1,11 +1,12 @@
 @import "mixins";
-$header-color: blue;
+@import "theme";
 
 * {
   margin: 5;
   padding: 0;
   box-sizing: border-box;
-  background-color: white;
+  background-color: lighten(#efb9ad, 10%);
+  font-family: $font-family;
 }
 
 header {
@@ -17,6 +18,7 @@ header {
       width: 20vw;
       height: 30px;
       padding-left: 5px;
+      background-color: $white-color;
     }
     & div {
       display: flex;
@@ -26,9 +28,9 @@ header {
   }
 
   & .page-title {
-    background-color: $header-color;
+    background-color: $secondary-color;
     font-size: 1.5rem;
-    color: white;
+    color: $white-color;
     height: 8vh;
     @include header-common();
   }
@@ -40,7 +42,7 @@ header {
 }
 
 nav {
-  background-color: gray;
+  background-color: $primary-color;
 }
 
 .menu-container {
@@ -49,11 +51,10 @@ nav {
   & .menu-title {
     font-size: 1.1rem;
     text-transform: uppercase;
-    color: white;
-    background-color: gray;
+    color: $white-color;
+    background-color: $primary-color;
     height: 35px;
     @include header-common();
-    display: flex;
     justify-content: center;
   }
 
@@ -69,5 +70,43 @@ nav {
     border: solid 0.75px gray;
     height: 35px;
     cursor: pointer;
+    @include header-common();
   }
+}
+
+.list {
+  padding: 25px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  row-gap: 25px;
+  column-gap: 25px;
+
+  & .card {
+    border: solid 1px gray;
+    background-color: $white-color;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    & img {
+      width: 50%;
+      height: 50%;
+      border-radius: 50%;
+    }
+    & div {
+      padding: 10px;
+      text-align: center;
+      background-color: $white-color;
+    }
+    & * {
+      margin: 0 auto;
+    }
+  }
+}
+
+footer {
+  background-color: $third-color;
+  height: 5vh;
+  @include header-common();
 }
