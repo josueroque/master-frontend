@@ -139,7 +139,7 @@ footer {
       height: 20vh; }
       .list .card img {
         width: 20%;
-        height: 15vh;
+        height: 75%;
         border-radius: 50%; }
       .list .card div {
         background-color: #ffffff;
@@ -151,3 +151,12 @@ footer {
         padding-left: 0; }
       .list .card * {
         margin: 10px; } }
+
+@media only screen and (max-width: 600px) {
+  .list .card {
+    height: 15vh;
+    padding: 0; }
+    .list .card img {
+      width: 25%;
+      max-height: 15vh;
+      border-radius: 50%; } }
