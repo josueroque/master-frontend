@@ -73,7 +73,8 @@ nav {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
   row-gap: 25px;
-  column-gap: 25px; }
+  column-gap: 25px;
+  justify-content: space-evenly; }
   .list .card {
     border: solid 1px gray;
     background-color: #ffffff;
@@ -137,7 +138,7 @@ footer {
       align-items: center;
       height: 20vh; }
       .list .card img {
-        width: 20%;
+        width: 15vw;
         max-height: 15vh !important;
         border-radius: 50%; }
       .list .card div {
@@ -154,8 +155,9 @@ footer {
 @media only screen and (max-width: 600px) {
   .list .card {
     height: 15vh;
-    padding: 0; }
+    padding: 0;
+    margin: 0; }
     .list .card img {
       width: 20%;
-      max-height: 10vh !important;
+      max-height: 12vh !important;
       border-radius: 50%; } }
