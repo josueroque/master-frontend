@@ -13,7 +13,7 @@ header .toolbar {
     width: 20vw;
     height: 30px;
     padding-left: 5px;
-    background-color: white; }
+    background-color: #ffffff; }
   header .toolbar div {
     display: flex;
     flex-direction: row;
@@ -22,7 +22,7 @@ header .toolbar {
 header .page-title {
   background-color: #bc0000;
   font-size: 1.5rem;
-  color: white;
+  color: #ffffff;
   height: 8vh;
   display: flex;
   flex-direction: row;
@@ -42,7 +42,7 @@ nav {
   .menu-container .menu-title {
     font-size: 1.1rem;
     text-transform: uppercase;
-    color: white;
+    color: #ffffff;
     background-color: #680003;
     height: 35px;
     display: flex;
@@ -76,7 +76,7 @@ nav {
   column-gap: 25px; }
   .list .card {
     border: solid 1px gray;
-    background-color: white;
+    background-color: #ffffff;
     height: 30vh;
     display: flex;
     flex-direction: column;
@@ -88,7 +88,7 @@ nav {
     .list .card div {
       padding: 10px;
       text-align: center;
-      background-color: white; }
+      background-color: #ffffff; }
     .list .card * {
       margin: 0 auto; }
 
@@ -100,6 +100,14 @@ footer {
   flex-direction: row;
   align-items: center;
   padding: 10px; }
+
+@media only screen and (max-width: 1024px) {
+  .list {
+    grid-template-columns: 1fr 1fr 1fr; } }
+
+@media only screen and (max-width: 900px) {
+  .list {
+    grid-template-columns: 1fr 1fr; } }
 
 @media only screen and (max-width: 768px) {
   .page-title {
@@ -126,13 +134,14 @@ footer {
     .list .card {
       flex-direction: row;
       justify-content: left;
+      align-items: center;
       height: 20vh; }
       .list .card img {
         width: 20%;
         height: 15vh;
         border-radius: 50%; }
       .list .card div {
-        background-color: white;
+        background-color: #ffffff;
         text-align: left;
         display: flex;
         flex-direction: row;

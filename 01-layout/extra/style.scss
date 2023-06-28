@@ -114,6 +114,18 @@ footer {
   @include header-common();
 }
 
+@media only screen and (max-width: 1024px) {
+  .list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .page-title {
     font-size: 1.25rem !important;
@@ -154,6 +166,7 @@ footer {
     & .card {
       flex-direction: row;
       justify-content: left;
+      align-items: center;
       height: 20vh;
       & img {
         width: 20%;
