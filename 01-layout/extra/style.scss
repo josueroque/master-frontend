@@ -2,10 +2,10 @@
 @import "theme";
 
 * {
-  margin: 5;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: lighten(#efb9ad, 10%);
+  background-color: lighten($third-color, 10%);
   font-family: $font-family;
 }
 
@@ -59,6 +59,8 @@ nav {
   }
 
   & ul {
+    position: sticky;
+    top: 0;
     margin-top: 0;
     display: flex;
     flex-direction: column;
@@ -77,7 +79,8 @@ nav {
 .list {
   padding: 25px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
   row-gap: 25px;
   column-gap: 25px;
 
@@ -88,10 +91,9 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    justify-items: center;
     & img {
       width: 50%;
-      height: 50%;
+      max-height: 25vh;
       border-radius: 50%;
     }
     & div {
@@ -108,5 +110,64 @@ nav {
 footer {
   background-color: $third-color;
   height: 5vh;
+  font-size: 0.8rem;
   @include header-common();
+}
+
+@media only screen and (max-width: 768px) {
+  .page-title {
+    font-size: 1.25rem !important;
+  }
+
+  .toolbar {
+    display: none !important;
+  }
+
+  .menu-title {
+    display: none !important;
+  }
+
+  .page-container {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    position: sticky;
+    top: 0;
+  }
+
+  ul {
+    display: block;
+    padding: 10px;
+    flex-direction: row !important;
+    column-gap: 5px;
+    background-color: $third-color;
+  }
+
+  li {
+    width: 100%;
+  }
+
+  .list {
+    grid-template-columns: 1fr;
+
+    & .card {
+      flex-direction: row;
+      justify-content: left;
+      height: 20vh;
+      & img {
+        width: 20%;
+        height: 15vh;
+        border-radius: 50%;
+      }
+      & div {
+        background-color: $white-color;
+        text-align: left;
+        @include header-common();
+      }
+      * {
+        margin: 10px;
+      }
+    }
+  }
 }
