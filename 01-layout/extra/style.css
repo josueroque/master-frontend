@@ -153,10 +153,10 @@ footer {
   .list {
     row-gap: 10px; }
     .list .card {
-      height: 12vh;
+      height: 10vh;
       padding: 0;
       margin: 0; }
       .list .card img {
         width: 12vw;
-        height: 10vh !important;
+        height: 9vh !important;
         border-radius: 50%; } }
