@@ -69,16 +69,16 @@ nav {
 
 .list {
   padding: 25px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto;
-  row-gap: 25px;
-  column-gap: 25px; }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-evenly; }
   .list .card {
     border: solid 1px gray;
     background-color: #ffffff;
     height: 30vh;
     display: flex;
+    width: 24%;
     flex-direction: column;
     justify-content: center; }
     .list .card img {
@@ -101,14 +101,12 @@ footer {
   padding: 10px; }
 
 @media only screen and (max-width: 1024px) {
-  .list {
-    grid-template-columns: 1fr 1fr 1fr; } }
+  .card {
+    width: 30% !important; } }
 
 @media only screen and (max-width: 900px) {
-  .list {
-    grid-template-columns: 1fr 1fr; }
   .card {
-    overflow: hidden; } }
+    width: 49% !important; } }
 
 @media only screen and (max-width: 768px) {
   .page-title {
@@ -130,27 +128,26 @@ footer {
     background-color: #efb9ad; }
   li {
     width: 100%; }
-  .list {
-    grid-template-columns: 1fr; }
-    .list .card {
+  .list .card {
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    height: 20vh;
+    width: 100% !important; }
+    .list .card img {
+      width: 15vw;
+      max-height: 15vh !important;
+      border-radius: 50%; }
+    .list .card div {
+      background-color: #ffffff;
+      text-align: left;
+      display: flex;
       flex-direction: row;
-      justify-content: left;
       align-items: center;
-      height: 20vh; }
-      .list .card img {
-        width: 15vw;
-        max-height: 15vh !important;
-        border-radius: 50%; }
-      .list .card div {
-        background-color: #ffffff;
-        text-align: left;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding: 10px;
-        padding-left: 0; }
-      .list .card * {
-        margin: 10px; } }
+      padding: 10px;
+      padding-left: 0; }
+    .list .card * {
+      margin: 10px; } }
 
 @media only screen and (max-width: 600px) {
   .list {
