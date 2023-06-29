@@ -73,8 +73,7 @@ nav {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
   row-gap: 25px;
-  column-gap: 25px;
-  justify-content: space-evenly; }
+  column-gap: 25px; }
   .list .card {
     border: solid 1px gray;
     background-color: #ffffff;
@@ -83,7 +82,8 @@ nav {
     flex-direction: column;
     justify-content: center; }
     .list .card img {
-      border-radius: 50%; }
+      border-radius: 50%;
+      height: 15vh; }
     .list .card div {
       padding: 10px;
       text-align: center;
@@ -153,11 +153,13 @@ footer {
         margin: 10px; } }
 
 @media only screen and (max-width: 600px) {
-  .list .card {
-    height: 15vh;
-    padding: 0;
-    margin: 0; }
-    .list .card img {
-      width: 20%;
-      max-height: 12vh !important;
-      border-radius: 50%; } }
+  .list {
+    row-gap: 10px; }
+    .list .card {
+      height: 12vh;
+      padding: 0;
+      margin: 0; }
+      .list .card img {
+        width: 12vw;
+        height: 10vh !important;
+        border-radius: 50%; } }
