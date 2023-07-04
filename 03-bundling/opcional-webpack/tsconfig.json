@@ -11,6 +11,6 @@
     "skipLibCheck": true,
     "esModuleInterop": true
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "webpack.common.js"],
   "exclude": ["node_modules"]
 }
