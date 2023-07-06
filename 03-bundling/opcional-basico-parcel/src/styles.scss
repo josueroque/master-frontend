@@ -1,14 +1,16 @@
-#container {
-  margin: 0 auto;
-  width: 15vw;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
 }
 
-h2 {
-  margin-top: 20px;
+h1 {
   text-align: center;
+  color: blueviolet;
 }
 
 img {
-  width: 100%;
-  height: 20vh;
+  height: 240px;
+  width: 240px;
 }

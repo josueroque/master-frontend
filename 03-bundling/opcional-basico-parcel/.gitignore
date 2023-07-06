@@ -16,3 +16,5 @@ package-lock.json
 build/
 transpiled/
 dist/
+.parcel-cache/
+.cache/
