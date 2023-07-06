@@ -7,10 +7,12 @@
     "noImplicitAny": false,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
+    "jsx": "react",
     "noLib": false,
+    "suppressImplicitAnyIndexErrors": true,
     "skipLibCheck": true,
     "esModuleInterop": true
   },
-  "include": ["src/**/*", "webpack.common.js"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules"]
 }

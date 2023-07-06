@@ -12,7 +12,7 @@ module.exports = {
   },
   output: {
     filename: "[name].[chunkhash].js",
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "build"),
   },
   module: {
     rules: [
@@ -32,11 +32,10 @@ module.exports = {
     ],
   },
   plugins: [
-    //Generate index.html in /dist => https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
       filename: "index.html", //Name of file in ./dist/
       template: "./index.html", //Name of template in ./src
-      scriptLoading: "blocking", // Just use the blocking approach (no modern defer or module)
+      scriptLoading: "blocking",
     }),
     new CleanWebpackPlugin(),
   ],
