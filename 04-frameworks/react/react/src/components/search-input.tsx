@@ -4,8 +4,8 @@ import {
   InputAdornment,
   TextField,
   createStyles,
-  makeStyles,
 } from "@mui/material";
+import makeStyles from "@mui/styles/makeStyles";
 import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
 
@@ -17,9 +17,9 @@ const useStyles: any = makeStyles(() => {
   });
 });
 
-const TypeSearch: FunctionComponent = () => {
+export const TypeSearch: FunctionComponent = () => {
   const { search } = useStyles({});
-
+  const [organization, setOrganization] = React.useState("lemoncode");
   const [showClearIcon, setShowClearIcon] = useState("none");
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
@@ -47,7 +47,7 @@ const TypeSearch: FunctionComponent = () => {
             endAdornment: (
               <InputAdornment
                 position="end"
-                style={{ display: showClearIcon }}
+                style={{ display: showClearIcon, cursor: "pointer" }}
                 onClick={handleClick}
               >
                 <ClearIcon />
@@ -59,5 +59,3 @@ const TypeSearch: FunctionComponent = () => {
     </div>
   );
 };
-
-export default TypeSearch;

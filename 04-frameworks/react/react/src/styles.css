@@ -15,3 +15,13 @@
 .list-user-list-container > img {
   width: 80px;
 }
+
+.search-section {
+  display: flex;
+  flex-direction: row-reverse;
+  column-gap: 10px;
+}
+
+button.lower-case {
+  text-transform: none;
+}

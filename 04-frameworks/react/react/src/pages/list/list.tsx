@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { TypeSearch } from "../../components/search-input";
+import { Button } from "@mui/material";
+import ListContext from "../../context/list-context";
 interface MemberEntity {
   id: string;
   login: string;
@@ -10,14 +12,25 @@ interface MemberEntity {
 export const ListPage: React.FC = () => {
   const [members, setMembers] = React.useState<MemberEntity[]>([]);
 
+  const { selectedOrganization } = React.useContext(ListContext);
+
   React.useEffect(() => {
-    fetch(`https://api.github.com/orgs/lemoncode/members`)
-      .then((response) => response.json())
-      .then((json) => setMembers(json));
-  }, []);
+    console.log(selectedOrganization);
+    if (selectedOrganization) {
+      fetch(`https://api.github.com/orgs/${selectedOrganization}/members`)
+        .then((response) => response.json())
+        .then((json) => setMembers(json));
+    }
+  }, [selectedOrganization]);
 
   return (
     <>
+      <div className="search-section">
+        <Button variant="contained" className="lower-case">
+          Search
+        </Button>
+        <TypeSearch />
+      </div>
       <h2>Hello from List page</h2>+{" "}
       <div className="list-user-list-container">
         <span className="list-header">Avatar</span>
