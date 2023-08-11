@@ -1,22 +1,20 @@
 import React, { FC, PropsWithChildren, createContext } from "react";
-import { TypeSearch } from "../components/search-input";
-import List from "../pages/list";
-import { ListPage } from "../pages/list/list";
-interface Context {
+
+export type TypeContext = {
   selectedOrganization: string;
   defaultOrganization: string;
-  setSelectedOrganization: any;
-}
-const ListContext = createContext({
-  selectedOrganization: "lemoncode",
-  defaultOrganization: "lemoncode",
-  setSelectedOrganization: () => {},
-} as Context);
-export const ListContextProvider = () => {
-  const defaultOrganization = "lemoncode";
+  setSelectedOrganization?: React.Dispatch<React.SetStateAction<string>>;
+};
+
+const defaultOrganization = "lemoncode";
+export const ListContext = createContext<Partial<any>>({});
+export const ListContextProvider = (props: any) => {
   const [selectedOrganization, setSelectedOrganization] =
     React.useState(defaultOrganization);
 
+  React.useEffect(() => {
+    console.log({ selectedOrganization });
+  }, [defaultOrganization]);
   return (
     <ListContext.Provider
       value={{
@@ -25,10 +23,7 @@ export const ListContextProvider = () => {
         setSelectedOrganization,
       }}
     >
-      <TypeSearch />
-      <ListPage />
+      {props.children}
     </ListContext.Provider>
   );
 };
-
-export default ListContext;
