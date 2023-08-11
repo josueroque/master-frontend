@@ -12,9 +12,6 @@ export const ListContextProvider = (props: any) => {
   const [selectedOrganization, setSelectedOrganization] =
     React.useState(defaultOrganization);
 
-  React.useEffect(() => {
-    console.log({ selectedOrganization });
-  }, [defaultOrganization]);
   return (
     <ListContext.Provider
       value={{

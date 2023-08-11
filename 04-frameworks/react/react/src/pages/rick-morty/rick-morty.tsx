@@ -10,7 +10,7 @@ interface MemberEntity {
   avatar_url: string;
 }
 
-export const ListPage: React.FC = () => {
+export const RickMorty: React.FC = () => {
   const [members, setMembers] = React.useState<MemberEntity[]>([]);
 
   const { selectedOrganization } = React.useContext(ListContext);
@@ -19,7 +19,7 @@ export const ListPage: React.FC = () => {
 
   React.useEffect(() => {
     fetchItems(`https://api.github.com/orgs/${textEntered}/members`).then(
-      (json) => setMembers(json)
+      (items) => setMembers(items)
     );
   }, [textEntered]);
 
