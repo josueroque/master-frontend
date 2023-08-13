@@ -7,7 +7,7 @@ export type TypeContext = {
 };
 
 const defaultOrganization = "lemoncode";
-export const ListContext = createContext<Partial<any>>({});
+export const ListContext = createContext<TypeContext | null>(null);
 export const ListContextProvider = (props: any) => {
   const [selectedOrganization, setSelectedOrganization] =
     React.useState(defaultOrganization);
