@@ -1,4 +1,4 @@
-import React, { FC, FunctionComponent, useState, useContext } from "react";
+import React, { useState } from "react";
 import {
   FormControl,
   InputAdornment,
@@ -8,7 +8,7 @@ import {
 import makeStyles from "@mui/styles/makeStyles";
 import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
-import { ListContext } from "../context/list-context";
+import { ListContext } from "../../context/list-context";
 
 const useStyles: any = makeStyles(() => {
   return createStyles({

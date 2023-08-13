@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { MemberEntity } from "../../pages/organizations/list";
+import { MemberEntity } from "../../pages/organizations/organizations";
 
 interface Props {
   items: MemberEntity[];

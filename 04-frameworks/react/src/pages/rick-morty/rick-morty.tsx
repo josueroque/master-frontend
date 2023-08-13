@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { TypeSearch } from "../../components/search-input";
+import { TypeSearch } from "../../components/search-input/search-input";
 import { Button } from "@mui/material";
 import { ListContext } from "../../context/list-context";
 import { fetchItems } from "../../utils";
+import MainMenu from "../../components/main-menu/main-menu";
 interface MemberEntity {
   id: string;
   login: string;
@@ -33,6 +34,7 @@ export const RickMorty: React.FC = () => {
 
   return (
     <>
+      <MainMenu />
       <div className="search-section">
         <Button
           variant="contained"
