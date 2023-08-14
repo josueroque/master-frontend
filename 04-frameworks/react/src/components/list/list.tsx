@@ -11,6 +11,7 @@ export const ListComponent: React.FC<Props> = ({ items, title }) => {
   return (
     <>
       <h2>{title}</h2>
+
       <div className="list-user-list-container">
         <span className="list-header">Avatar</span>
         <span className="list-header">Id</span>
@@ -19,12 +20,11 @@ export const ListComponent: React.FC<Props> = ({ items, title }) => {
           items.map((item) => (
             <>
               <img src={item.avatar_url} />
-              <span>{item.id}</span>
+              <span className="text-id">{item.id}</span>
               <Link to={`/detail/${item.login}`}>{item.login}</Link>
             </>
           ))}
       </div>
-      <Link to="/detail">Navigate to detail page</Link>
     </>
   );
 };

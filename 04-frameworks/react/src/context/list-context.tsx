@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren, createContext } from "react";
+import React, { createContext } from "react";
 
 export type TypeContext = {
   selectedOrganization: string;
