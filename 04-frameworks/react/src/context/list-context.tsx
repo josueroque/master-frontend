@@ -1,9 +1,9 @@
 import React, { createContext } from "react";
 
 export type TypeContext = {
-  selectedOrganization: string;
+  searchText: string;
   defaultOrganization: string;
-  setSelectedOrganization?: React.Dispatch<React.SetStateAction<string>>;
+  setSearchText?: React.Dispatch<React.SetStateAction<string>>;
 };
 
 const defaultOrganization = "lemoncode";
@@ -16,8 +16,8 @@ export const ListContextProvider = (props: any) => {
     <ListContext.Provider
       value={{
         defaultOrganization,
-        selectedOrganization,
-        setSelectedOrganization,
+        searchText: selectedOrganization,
+        setSearchText: setSelectedOrganization,
       }}
     >
       {props.children}

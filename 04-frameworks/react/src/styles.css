@@ -34,7 +34,7 @@ button.lower-case {
   justify-content: center;
 }
 
-.text-id {
-  display: flex;
-  justify-content: center;
+.item-text {
+  margin-left: 10px;
+  align-self: center;
 }

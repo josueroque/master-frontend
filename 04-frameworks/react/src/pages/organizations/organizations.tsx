@@ -1,4 +1,4 @@
-import React from "react";
+import React, { PropsWithChildren } from "react";
 import { TypeSearch } from "../../components/search-input/search-input";
 import { Button } from "@mui/material";
 import { ListContext } from "../../context/list-context";
@@ -16,9 +16,9 @@ export interface MemberEntity {
 export const ListPage: React.FC = () => {
   const [members, setMembers] = React.useState<MemberEntity[]>([]);
 
-  const { selectedOrganization } = React.useContext(ListContext);
+  const { searchText } = React.useContext(ListContext);
 
-  const [textEntered, setTextEntered] = React.useState(selectedOrganization);
+  const [textEntered, setTextEntered] = React.useState(searchText);
 
   const [count, setCount] = React.useState(1);
 
@@ -45,8 +45,8 @@ export const ListPage: React.FC = () => {
   }, [textEntered, page]);
 
   React.useEffect(() => {
-    if (!selectedOrganization) setTextEntered("");
-  }, [selectedOrganization]);
+    if (!searchText) setTextEntered("");
+  }, [searchText]);
 
   const resetData = () => {
     setMembers([]);
@@ -55,7 +55,7 @@ export const ListPage: React.FC = () => {
   };
 
   const applySearch = () => {
-    setTextEntered(selectedOrganization);
+    setTextEntered(searchText);
   };
 
   const handlePageChange = (
@@ -76,12 +76,13 @@ export const ListPage: React.FC = () => {
         >
           Search
         </Button>
-        <TypeSearch />
+        <TypeSearch defaultText={searchText} contextProvider="listContext" />
       </div>
       <div>
         <ListComponent
           items={members}
-          title={`Selected Organization: ${selectedOrganization}`}
+          title={`Selected Organization: ${searchText}`}
+          path="list"
         />
         <div className="pagination">
           <Paginator

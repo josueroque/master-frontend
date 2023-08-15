@@ -1,11 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { TypeSearch } from "../../components/search-input/search-input";
 import { Button } from "@mui/material";
 import { fetchItems } from "../../utils";
 import MainMenu from "../../components/main-menu/main-menu";
 import Paginator from "../../components/pagination/pagination";
-interface CharacterEntity {
+import { RickMortyContext } from "../../context/rick-morty-context";
+import ListComponent from "../../components/list/list";
+export interface CharacterEntity {
   id: string;
   name: string;
   image: string;
@@ -13,23 +14,33 @@ interface CharacterEntity {
 
 export const RickMorty: React.FC = () => {
   const [characters, setCharacters] = React.useState<CharacterEntity[]>([]);
-  const [textEntered, setTextEntered] = React.useState("");
   const [count, setCount] = React.useState(1);
   const [page, setPage] = React.useState(1);
+  const { searchText } = React.useContext(RickMortyContext);
+  const [textEntered, setTextEntered] = React.useState(searchText);
 
   React.useEffect(() => {
-    fetchItems(
-      `https://rickandmortyapi.com/api/character/?page=${page}&count=5`
-    ).then((response) => {
-      console.log({ response });
+    setTextEntered("");
+  }, []);
+
+  React.useEffect(() => {
+    let url = `https://rickandmortyapi.com/api/character/?page=${page}&count=5`;
+
+    if (textEntered) url += `&name=${textEntered}`;
+
+    fetchItems(url).then((response) => {
       setCharacters(response.results);
       setCount(response.info.pages);
     });
   }, [textEntered, page]);
 
   const applySearch = () => {
-    setTextEntered(textEntered);
+    setTextEntered(searchText);
   };
+
+  React.useEffect(() => {
+    if (!searchText) setTextEntered("");
+  }, [searchText]);
 
   const handlePageChange = (
     event: React.ChangeEvent<unknown>,
@@ -49,24 +60,14 @@ export const RickMorty: React.FC = () => {
         >
           Search
         </Button>
-        <TypeSearch />
+        <TypeSearch defaultText="" contextProvider="rickMorty" />
       </div>
-
-      <h2>Characters List </h2>
       <div>
-        <div className="list-user-list-container">
-          <span className="list-header">Avatar</span>
-          <span className="list-header">Id</span>
-          <span className="list-header">Name</span>
-          {Array.isArray(characters) &&
-            characters.map((character) => (
-              <>
-                <img src={character.image} />
-                <span className="text-id">{character.id}</span>
-                <Link to={`/detail/${character.id}`}>{character.name}</Link>
-              </>
-            ))}
-        </div>
+        <ListComponent
+          items={characters}
+          title={`Characters`}
+          path="rick-morty"
+        />
         <div className="pagination">
           <Paginator
             count={count}
