@@ -23,6 +23,7 @@ export const ListComponent: React.FC<Props | any> = ({
         <span className="list-header">Name</span>
         {Array.isArray(items) &&
           items.map((item) => (
+            //TODO Add a key for rendered items
             <>
               <img src={item.avatar_url || item.image} />
               <span className="item-text">{item.id}</span>

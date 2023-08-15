@@ -34,6 +34,7 @@ export const TypeSearch: React.FC<Props> = ({
   const [showClearIcon, setShowClearIcon] = React.useState("flex");
   const { searchText, setSearchText } = React.useContext(provider);
 
+  //TODO Check why MUI Textfield is not setting focus
   const inputRef = React.useRef(null);
 
   React.useEffect(() => {
