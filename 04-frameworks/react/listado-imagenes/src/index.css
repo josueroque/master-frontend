@@ -34,3 +34,27 @@ img {
 .item-card {
   margin: 10px;
 }
+
+.main-layout {
+  display: flex;
+}
+
+.layout-header {
+}
+
+.items-container {
+  width: 70%;
+}
+
+.cart-container {
+  width: 30%;
+  display: flex;
+}
+
+.icon-container {
+}
+
+.cart-title {
+  font-size: 1.5rem;
+  padding-right: 10px;
+}

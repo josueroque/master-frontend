@@ -18,6 +18,7 @@ export default function MainMenu() {
           ml: 2,
         },
       }}
+      className="layout-header"
       onClick={preventDefault}
     >
       <Link to="/cars">Cars</Link>

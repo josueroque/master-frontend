@@ -1,8 +1,9 @@
-import { car } from "../interfaces";
+import { ICar } from "../interfaces";
 
-export const cars: car[] = [
+export const cars: ICar[] = [
   {
     id: 1,
+    category: "car",
     make: "Volksvawen",
     model: "Beatle",
     price: 5000,
@@ -14,6 +15,7 @@ export const cars: car[] = [
   },
   {
     id: 2,
+    category: "car",
     make: "Toyota",
     model: "Corolla",
     price: 8500,

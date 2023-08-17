@@ -1,12 +1,15 @@
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import MainMenu from "../main-menu/main-menu";
+import MainMenu from "../main-menu/MainMenu";
+import Cart from "../components/cart/cart";
 
 const MainLayout = (props: any) => {
   return (
     <div>
       <MainMenu />
-      {props.children}
-      <ShoppingCartIcon />
+      <div className="main-layout">
+        {props.children}
+        <Cart />
+      </div>
     </div>
   );
 };

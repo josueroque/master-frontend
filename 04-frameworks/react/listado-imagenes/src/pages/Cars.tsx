@@ -1,15 +1,21 @@
 import React from "react";
-import { cars as carsList } from "../data";
-import { car } from "../interfaces";
+import { ICar } from "../interfaces";
 import ItemCard from "../components/card/card";
-import MainMenu from "../main-menu/main-menu";
-import MainLayout from "../layouts/main";
+import MainLayout from "../layouts/MainLayout";
+import { CartContext } from "../context/CartContext";
+
 const Cars = () => {
+  const { cartState, carsList } = React.useContext(CartContext);
+
+  React.useEffect(() => {
+    console.log({ cartState });
+  }, [cartState]);
   return (
     <MainLayout>
       <div className="items-container">
-        {carsList.map((item: car) => (
+        {carsList.map((item: ICar) => (
           <ItemCard
+            key={item.id}
             imageUrl={item.image.url}
             title={item.image.title}
             {...item}

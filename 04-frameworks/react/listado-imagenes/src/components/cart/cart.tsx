@@ -1,13 +1,11 @@
 import React from "react";
-
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 const Cart = () => {
   return (
-    <div>
-      <h2> Cart </h2>
-      <ul>
-        <li>Test1</li>
-        <li>Test2</li>
-      </ul>
+    <div className="cart-container">
+      <div className="icon-container">
+        <span className="cart-title">Cart</span> <ShoppingCartIcon />
+      </div>
     </div>
   );
 };

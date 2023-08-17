@@ -1,19 +1,22 @@
-import React from "react";
 import { cars as carsList } from "../data";
-import { car } from "../interfaces";
+import { ICar } from "../interfaces";
 import ItemCard from "../components/card/card";
-const Motorcycles = () => {
+import MainLayout from "../layouts/MainLayout";
+const Cars = () => {
   return (
-    <div className="items-container">
-      {carsList.map((item: car) => (
-        <ItemCard
-          imageUrl={item.image.url}
-          title={item.image.title}
-          {...item}
-        />
-      ))}
-    </div>
+    <MainLayout>
+      <div className="items-container">
+        {carsList.map((item: ICar) => (
+          <ItemCard
+            key={item.id}
+            imageUrl={item.image.url}
+            title={item.image.title}
+            {...item}
+          />
+        ))}
+      </div>
+    </MainLayout>
   );
 };
 
-export default Motorcycles;
+export default Cars;

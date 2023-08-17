@@ -6,6 +6,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Checkbox } from "@mui/material";
+import { CartContext } from "../../context/CartContext";
 
 interface Props {
   title: string;
@@ -14,9 +15,11 @@ interface Props {
   year: string;
   price: number;
   imageUrl: string;
+  id: number;
 }
 
 export const ItemCard: React.FC<Props> = ({
+  id,
   title,
   make,
   model,
@@ -25,9 +28,15 @@ export const ItemCard: React.FC<Props> = ({
   imageUrl,
 }) => {
   const [checked, setChecked] = React.useState(false);
-
+  const { dispatch, cartState } = React.useContext(CartContext);
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(event.target.checked);
+    if (event.target.checked !== checked) {
+      dispatch({
+        type: event.target.checked ? "ADD_ITEM" : "REMOVE_ITEM",
+        payload: id,
+      });
+    }
   };
   return (
     <Card sx={{ maxWidth: 345 }} className="item-card">
