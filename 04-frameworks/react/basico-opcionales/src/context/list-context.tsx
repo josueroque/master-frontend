@@ -1,4 +1,4 @@
-import React, { createContext } from "react";
+import React, { PropsWithChildren, createContext } from "react";
 
 export type TypeContext = {
   searchText: string;
@@ -7,8 +7,11 @@ export type TypeContext = {
 };
 
 const defaultOrganization = "lemoncode";
+
+interface Props extends PropsWithChildren {}
+
 export const ListContext = createContext<TypeContext | null>(null);
-export const ListContextProvider = (props: any) => {
+export const ListContextProvider: React.FC<Props> = (props) => {
   const [selectedOrganization, setSelectedOrganization] =
     React.useState(defaultOrganization);
 

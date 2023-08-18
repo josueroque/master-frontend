@@ -8,8 +8,12 @@ import {
 import makeStyles from "@mui/styles/makeStyles";
 import SearchIcon from "@mui/icons-material/Search";
 import ClearIcon from "@mui/icons-material/Clear";
-import { ListContext } from "../../context/list-context";
-import { RickMortyContext } from "../../context/rick-morty-context";
+import { ListContext, TypeContext } from "../../context/list-context";
+
+import {
+  RickMortyContext,
+  TypeContext as RickMortyTypeContext,
+} from "../../context/rick-morty-context";
 
 const useStyles: any = makeStyles(() => {
   return createStyles({
@@ -28,7 +32,7 @@ export const TypeSearch: React.FC<Props> = ({
   defaultText,
   contextProvider,
 }) => {
-  const provider: React.Context<any> =
+  const provider: React.Context<TypeContext | RickMortyTypeContext> =
     contextProvider === "listContext" ? ListContext : RickMortyContext;
   const { search } = useStyles({});
   const [showClearIcon, setShowClearIcon] = React.useState("flex");

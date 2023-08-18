@@ -1,4 +1,4 @@
-import React, { createContext } from "react";
+import React, { PropsWithChildren, createContext } from "react";
 
 export type TypeContext = {
   searchText: string;
@@ -6,8 +6,10 @@ export type TypeContext = {
   setSearchText?: React.Dispatch<React.SetStateAction<string>>;
 };
 
+interface Props extends PropsWithChildren {}
+
 export const RickMortyContext = createContext<TypeContext | null>(null);
-export const RickMortyContextProvider = (props: any) => {
+export const RickMortyContextProvider: React.FC<Props> = (props) => {
   const [searchText, setSearchText] = React.useState("");
 
   return (
