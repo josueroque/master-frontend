@@ -12,9 +12,16 @@ code {
     monospace;
 }
 
-.items-container {
+.main-layout {
   display: flex;
-  margin-top: "20px";
+}
+
+.items-container {
+  padding: 20px;
+  width: 75%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
 }
 
 .image-container {
@@ -24,37 +31,101 @@ code {
   justify-content: center;
 }
 
-img {
+.image-container > img {
   margin-top: 10px;
   max-height: 100%;
   max-width: 100%;
-  border-radius: 25px;
+  border-radius: 50%;
 }
 
 .item-card {
-  margin: 10px;
-}
-
-.main-layout {
-  display: flex;
-}
-
-.layout-header {
-}
-
-.items-container {
-  width: 70%;
+  min-width: 270px;
+  padding-left: 0;
 }
 
 .cart-container {
-  width: 30%;
-  display: flex;
-}
-
-.icon-container {
+  width: 25%;
+  padding-left: 20px;
 }
 
 .cart-title {
   font-size: 1.5rem;
   padding-right: 10px;
+}
+
+.cart-item-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 40px;
+}
+
+.cart-image-container {
+  width: 15%;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0;
+}
+
+.cart-image-container > img {
+  max-width: 100%;
+  max-height: 35px;
+  border-radius: 50%;
+}
+
+.cart-item-text {
+  width: 70%;
+  text-align: center;
+}
+
+@media only screen and (width <1450px) {
+  .items-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (width <1100px) {
+  .items-container {
+    width: 70%;
+    grid-template-columns: 1fr 1fr;
+  }
+  .cart-container {
+    width: 30%;
+  }
+}
+
+@media only screen and (width <1100px) {
+  .items-container {
+    width: 70%;
+    grid-template-columns: 1fr 1fr;
+  }
+  .cart-container {
+    width: 30%;
+  }
+}
+
+@media only screen and (width <800px) {
+  .items-container {
+    width: 50%;
+    grid-template-columns: 1fr;
+  }
+  .cart-container {
+    width: 50%;
+  }
+}
+
+@media only screen and (width <550px) {
+  .main-layout {
+    flex-direction: column;
+  }
+
+  .items-container {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+  .cart-container {
+    width: 100%;
+  }
 }

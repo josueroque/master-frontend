@@ -23,7 +23,6 @@ export default function MainMenu() {
     >
       <Link to="/cars">Cars</Link>
       <Link to="/motorcycles">Motorcycles</Link>
-      <Link to="/">{"Sign Out"}</Link>
     </Box>
   );
 }

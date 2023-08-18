@@ -29,6 +29,9 @@ export const ItemCard: React.FC<Props> = ({
 }) => {
   const [checked, setChecked] = React.useState(false);
   const { dispatch, cartState } = React.useContext(CartContext);
+  React.useEffect(() => {
+    setChecked(cartState.selectedItems.includes(id));
+  }, [cartState, id]);
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(event.target.checked);
     if (event.target.checked !== checked) {

@@ -5,22 +5,28 @@ import MainLayout from "../layouts/MainLayout";
 import { CartContext } from "../context/CartContext";
 
 const Cars = () => {
-  const { cartState, carsList } = React.useContext(CartContext);
+  const { cartState } = React.useContext(CartContext);
+  const [filteredList, setFilteredList] = React.useState([]);
 
   React.useEffect(() => {
-    console.log({ cartState });
+    console.log(cartState);
+    setFilteredList(
+      cartState.carsList.filter((listItem: ICar) => listItem.category === "car")
+    );
   }, [cartState]);
+
   return (
     <MainLayout>
       <div className="items-container">
-        {carsList.map((item: ICar) => (
-          <ItemCard
-            key={item.id}
-            imageUrl={item.image.url}
-            title={item.image.title}
-            {...item}
-          />
-        ))}
+        {Array.isArray(filteredList) &&
+          filteredList.map((item: ICar) => (
+            <ItemCard
+              key={item.id}
+              imageUrl={item.image.url}
+              title={item.image.title}
+              {...item}
+            />
+          ))}
       </div>
     </MainLayout>
   );

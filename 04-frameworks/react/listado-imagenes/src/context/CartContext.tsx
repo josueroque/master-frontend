@@ -13,6 +13,7 @@ const reducer = (
   switch (action.type) {
     case "ADD_ITEM":
       return {
+        ...state,
         selectedItems:
           state.selectedItems.length > 0
             ? [...state.selectedItems, action.payload]
@@ -28,6 +29,7 @@ const reducer = (
       };
     case "REMOVE_ITEM":
       return {
+        ...state,
         selectedItems: [...state.selectedItems].filter(
           (item) => item !== action.payload
         ),
@@ -50,7 +52,7 @@ export const CartContextProvider = (props: any) => {
   });
 
   return (
-    <CartContext.Provider value={{ dispatch, cartState, carsList }}>
+    <CartContext.Provider value={{ dispatch, cartState }}>
       {props.children}
     </CartContext.Provider>
   );
