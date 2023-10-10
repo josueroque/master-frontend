@@ -1,0 +1,17 @@
+.main-menu {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a::after {
+  color: aqua;
+}
