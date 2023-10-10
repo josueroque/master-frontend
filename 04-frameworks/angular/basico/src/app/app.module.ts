@@ -9,9 +9,11 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { AboutComponent } from './about/about.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { GaleriaComponent } from './galeria/galeria.component';
 import { CrudComponent } from './crud/crud.component';
 import { ProfileComponent } from './profile/profile.component';
+import { GalleryComponent } from './gallery/gallery.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -21,16 +23,14 @@ import { ProfileComponent } from './profile/profile.component';
     LoginComponent,
     AboutComponent,
     DashboardComponent,
-    GaleriaComponent,
     CrudComponent,
-    ProfileComponent
+    ProfileComponent,
+    GalleryComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
