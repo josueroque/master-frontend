@@ -1,1 +1,14 @@
-<p>login works!</p>
+<div *ngIf="!this.validLogin">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+    <label for="username">User</label>
+    <input name="username" ngModel required #first="ngModel" />
+    <label for="password">password</label>
+    <input type="password" name="password" required ngModel />
+    <button>Submit</button>
+  </form>
+
+  <p *ngIf="first.valid">First name value: {{ first.value }}</p>
+  <p>First name valid: {{ first.valid }}</p>
+  <p>Form value: {{ f.value | json }}</p>
+  <p>Form valid: {{ f.valid }}</p>
+</div>
