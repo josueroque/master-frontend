@@ -13,7 +13,7 @@ export class AuthService {
       user.password === '12345678'
     ) {
       localStorage.setItem('userName', user.username);
-      this.userStorage.next('added');
+      this.userStorage.next('logged');
       return true;
     }
 
@@ -26,7 +26,12 @@ export class AuthService {
     console.log(this.isLogged());
   }
 
-  isLogged(): Observable<any> {
+  isLogged(): boolean {
+    if (localStorage.getItem('userName')) return true;
+    return false;
+  }
+
+  isLoggedObs(): Observable<any> {
     return this.userStorage.asObservable();
   }
 

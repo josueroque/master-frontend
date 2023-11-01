@@ -1,5 +1,5 @@
-import { Component, HostListener, OnInit } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -8,12 +8,12 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent implements OnInit {
-  isLoggedObs: Observable<string> = this.authService.isLogged();
-  isLogged: any = false;
+  isLoggedObs: Observable<string> = this.authService.isLoggedObs();
+  isLogged: any = this.authService.isLogged();
   constructor(public authService: AuthService) {}
   ngOnInit(): void {
     this.isLoggedObs.subscribe((value) => {
-      this.isLogged = value === 'added' ? true : false;
+      this.isLogged = value === 'logged' ? true : false;
     });
   }
 }

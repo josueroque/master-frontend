@@ -1,6 +1,13 @@
-<div class="header-title">
+<div class="header">
   <div class="logo-container">
     <img src="assets/test-logo.png" alt="test" />
   </div>
-  <h1>Lemoncode</h1>
+  <div class="title">
+    <h1>Lemoncode</h1>
+    <h3 *ngIf="this.isLogged">User: {{ this.authService.getUsername() }}</h3>
+  </div>
+
+  <div *ngIf="this.isLogged" class="button-container">
+    <button (click)="this.logout()">Logout</button>
+  </div>
 </div>

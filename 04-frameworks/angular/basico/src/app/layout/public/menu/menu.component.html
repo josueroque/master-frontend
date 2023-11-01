@@ -12,10 +12,7 @@
 
   <!-- Private routes -->
   <li *ngIf="this.isLogged" routerLinkActive="selected">
-    <a routerLink="/login" (click)="this.authService.logout()">Logout</a>
-  </li>
-  <li *ngIf="this.isLogged" routerLinkActive="selected">
-    <a routerLink="/home">Dashboard</a>
+    <a routerLink="/dashboard">Dashboard</a>
   </li>
   <li *ngIf="this.isLogged" routerLinkActive="selected">
     <a routerLink="/gallery">Galería</a>

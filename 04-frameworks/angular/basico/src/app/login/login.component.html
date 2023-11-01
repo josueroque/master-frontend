@@ -1,14 +1,27 @@
 <div *ngIf="!this.validLogin">
   <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
     <label for="username">User</label>
-    <input name="username" ngModel required #first="ngModel" />
-    <label for="password">password</label>
-    <input type="password" name="password" required ngModel />
+    <input
+      name="username"
+      ngModel
+      type="email"
+      email="true"
+      required
+      #name="ngModel"
+    />
+    <label for="password">Password</label>
+    <input
+      type="password"
+      name="password"
+      required
+      ngModel
+      #password="ngModel"
+    />
     <button>Submit</button>
   </form>
 
-  <p *ngIf="first.valid">First name value: {{ first.value }}</p>
-  <p>First name valid: {{ first.valid }}</p>
-  <p>Form value: {{ f.value | json }}</p>
-  <p>Form valid: {{ f.valid }}</p>
+  <div *ngIf="f.dirty" class="validations">
+    <p *ngIf="!name.valid">The user name is invalid</p>
+    <p *ngIf="!password.valid">The password is invalid</p>
+  </div>
 </div>
