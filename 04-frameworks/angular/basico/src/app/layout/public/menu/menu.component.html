@@ -1,9 +1,29 @@
 <ul class="main-menu">
-  <li routerLinkActive="selected"><a routerLink="/home">Home</a></li>
-  <li routerLinkActive="selected"><a routerLink="/home">Login</a></li>
-  <li routerLinkActive="selected"><a routerLink="/home">Acerca de</a></li>
-  <li routerLinkActive="selected"><a routerLink="/home">Dashboard</a></li>
-  <li routerLinkActive="selected"><a routerLink="/home">Galería</a></li>
-  <li routerLinkActive="selected"><a routerLink="/home">CRUD</a></li>
-  <li routerLinkActive="selected"><a routerLink="/home">Profile</a></li>
+  <!-- Public routes -->
+  <li *ngIf="!this.isLogged" routerLinkActive="selected">
+    <a routerLink="/home">Home</a>
+  </li>
+  <li *ngIf="!this.isLogged" routerLinkActive="selected">
+    <a routerLink="/login">Login</a>
+  </li>
+  <li *ngIf="!this.isLogged" routerLinkActive="selected">
+    <a routerLink="/about">Acerca de</a>
+  </li>
+
+  <!-- Private routes -->
+  <li *ngIf="this.isLogged" routerLinkActive="selected">
+    <a routerLink="/login" (click)="this.authService.logout()">Logout</a>
+  </li>
+  <li *ngIf="this.isLogged" routerLinkActive="selected">
+    <a routerLink="/home">Dashboard</a>
+  </li>
+  <li *ngIf="this.isLogged" routerLinkActive="selected">
+    <a routerLink="/gallery">Galería</a>
+  </li>
+  <li *ngIf="this.isLogged" routerLinkActive="selected">
+    <a routerLink="/crud">CRUD</a>
+  </li>
+  <li *ngIf="this.isLogged" routerLinkActive="selected">
+    <a routerLink="/profile">Profile</a>
+  </li>
 </ul>

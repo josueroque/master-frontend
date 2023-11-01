@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-menu',
@@ -6,6 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent implements OnInit {
-  constructor() {}
-  ngOnInit(): void {}
+  isLoggedObs: Observable<string> = this.authService.isLogged();
+  isLogged: any = false;
+  constructor(public authService: AuthService) {}
+  ngOnInit(): void {
+    this.isLoggedObs.subscribe((value) => {
+      this.isLogged = value === 'added' ? true : false;
+    });
+  }
 }

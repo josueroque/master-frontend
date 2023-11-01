@@ -24,15 +24,11 @@ export class LoginComponent implements OnInit {
       password: formValues.value.password,
     });
 
-    console.log({ response });
-
     if (response) {
       this.validLogin = true;
       this.router.navigate(['/dashboard']);
     } else alert('Invalid Credentials!');
   }
 
-  ngOnInit(): void {
-    console.log({ validLogin: this.validLogin });
-  }
+  ngOnInit(): void {}
 }
